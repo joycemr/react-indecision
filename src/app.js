@@ -30,10 +30,10 @@ const renderApp = () => {
             <h1>{app.title}</h1>
             {app.subTitle && <p>{app.subTitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-        <p>{app.options.length}</p>
         <ol>
-            <li>Item One</li>
-            <li>Item Two</li>
+        {
+            app.options.map(option => <li key={option}>{option}</li>)
+        }
         </ol>
         <form onSubmit={addOptions}>
             <input type="text" name="option"></input>
