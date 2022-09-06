@@ -4,6 +4,7 @@ class IndecisionApp extends React.Component {
         super(props);
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handlePick = this.handlePick.bind(this);
+        this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
             options: ['Thing 1', 'Thing 2', 'Thing 4']
         }
@@ -17,6 +18,11 @@ class IndecisionApp extends React.Component {
         this.setState(() => {
             return {options: []}
         })
+    }
+
+    handleAddOption(option) {
+        const options = this.state.options.concat(option);
+        this.setState({options});
     }
 
     render() {
@@ -34,7 +40,9 @@ class IndecisionApp extends React.Component {
                     options={this.state.options}
                     handleDeleteOptions={this.handleDeleteOptions}
                 />
-                <AddOption />
+                <AddOption
+                    handleAddOption={this.handleAddOption}
+                />
             </div>
         );
     }
@@ -94,14 +102,18 @@ class Option extends React.Component {
 
 class AddOption extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.handleAddOption = this.handleAddOption.bind(this);
+    }
+
     handleAddOption(e) {
         e.preventDefault();
         const option = e.target.elements.option.value.trim();
         if (option) {
-            alert(option);
-            // app.options.push(option)
-            e.target.elements.option.value = '';
+            this.props.handleAddOption(option);
         }
+        e.target.elements.option.value = '';
     }
 
     render() {
