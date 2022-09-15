@@ -15,9 +15,7 @@ class IndecisionApp extends React.Component {
     }
 
     handleDeleteOptions() {
-        this.setState(() => {
-            return {options: []}
-        })
+        this.setState({options: []});
     }
 
     handleAddOption(option) {
@@ -112,9 +110,7 @@ class AddOption extends React.Component {
         e.preventDefault();
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option);
-        this.setState(() => {
-            return {error};
-        });
+        this.setState({error});
         if (!error) {
             e.target.elements.option.value = '';
         }
