@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AddOption from "./components/AddOption";
-import Option from "./components/Option"
+import Option from "./components/Option";
+import Header from "./components/Header";
+import Action from "./components/Action";
 
 class IndecisionApp extends React.Component {
 
@@ -86,29 +88,6 @@ class IndecisionApp extends React.Component {
 
 IndecisionApp.defaultProps = {
     options: []
-}
-
-const Header = (props) => {
-    return (
-        <div id='header'>
-            <h1>{props.title}</h1>
-            {props.subTitle && <h2>{props.subTitle}</h2>}
-        </div>
-    );
-}
-
-Header.defaultProps = {
-    title: 'Indecision Application'
-}
-
-const Action = (props) => {
-    return (
-        <div id='action'>
-            <button onClick={props.handlePick} disabled={!props.hasOptions}>
-                What should I do?
-            </button>
-        </div>
-    );
 }
 
 const Options = (props) => {
