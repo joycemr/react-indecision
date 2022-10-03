@@ -1,5 +1,7 @@
 # project specific stuff
 src/playground/*
+public/bundle.js
+public/bundle.js.LICENSE.txt
 
 # Logs
 logs
