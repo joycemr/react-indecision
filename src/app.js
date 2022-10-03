@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 class IndecisionApp extends React.Component {
 
     constructor(props) {
@@ -93,7 +96,7 @@ const Header = (props) => {
 }
 
 Header.defaultProps = {
-    title: 'Indecision'
+    title: 'Indecision Application'
 }
 
 const Action = (props) => {
