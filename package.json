@@ -6,8 +6,27 @@
   "repository": "git@github.com:joycemr/react-indecision.git",
   "author": "Michael Joyce <michael.joyce@illiniarts.com>",
   "license": "MIT",
+  "scripts": {
+    "serve": "live-server public",
+    "build": "webpack",
+    "webpack-version": "webpack --version",
+    "dev-server": "webpack-dev-server"
+  },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "1.5.2",
-    "babel-preset-react": "6.24.1"
+    "babel-preset-react": "6.24.1",
+    "live-server": "1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "validator": "^13.7.0",
+    "webpack": "^5.74.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "devDependencies": {
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "webpack-cli": "^4.10.0"
   }
 }
